@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutura Films | Filme Nziza Kandi Zisobanuye</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="main-background"></div>
+
+    <header class="glass-header">
+        <a href="index.html" class="logo-container">
+            <img src="https://i.postimg.cc/mDNdML8p/Rutura-films-logo.png" alt="Rutura Films" class="logo-img">
+        </a>
+
+        <div class="header-right">
+            <div class="search-wrapper">
+                <div class="search-bar glass-effect">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+                </div>
+                <div id="search-results-dropdown" class="search-dropdown glass-effect"></div>
+            </div>
+            <a href="https://wa.me/250782220473" target="_blank" class="whatsapp-pill primary-btn">
+                <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp Us</span>
+            </a>
+        </div>
+    </header>
+
+    <main id="home-view">
+        <section id="hero-section" class="hero-container">
+            <div class="hero-visuals">
+                <div class="hero-stack-wrapper">
+                    <div id="hero-stack" class="hero-stack">
+                        </div>
+                </div>
+            </div>
+            
+            <div class="hero-text">
+                <img src="https://i.postimg.cc/mDNdML8p/Rutura-films-logo.png" alt="Logo" class="hero-logo-img">
+                <h1 class="big-headline">FILME <br><span class="text-primary">ZISOBANUYE.</span></h1>
+                <p class="big-subtext">Filme nziza kandi zisobanuye mukinyarwanda abasobanuzi bose. Reba, Umenye, Usubiremo.</p>
+                <button onclick="scrollToMovies()" class="cta-btn primary-btn compact-btn">
+                    <i class="fa-solid fa-play"></i> Start Watching
+                </button>
+            </div>
+        </section>
+
+        <div id="category-movies-container">
+            <div class="loading-spinner">Loading movies...</div>
+        </div>
+
+        <footer class="main-footer glass-effect-footer">
+            <div class="footer-container">
+                <div class="footer-col brand-col">
+                    <img src="https://i.postimg.cc/mDNdML8p/Rutura-films-logo.png" alt="Logo" class="footer-logo">
+                    <p>Bringing you the best Kinyarwanda translated movies. Entertainment reimagined.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" onclick="window.scrollTo(0,0)">Home</a></li>
+                        <li><a href="#" onclick="scrollToMovies()">Movies</a></li>
+                        <li><a href="#hero-section">Trending</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list">
+                        <li><i class="fa-brands fa-whatsapp text-primary"></i> <a href="https://wa.me/250782220473">+250 782 220 473</a></li>
+                        <li><i class="fa-solid fa-envelope text-primary"></i> info@ruturafilms.com</li>
+                        <li><i class="fa-solid fa-location-dot text-primary"></i> Kigali, Rwanda</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rutura Films. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <div id="movie-page" class="full-page-view">
+        <div class="page-nav glass-header">
+            <button class="back-btn" onclick="closeMoviePage()">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </button>
+            <div class="logo-container mobile-hide">
+                <img src="https://i.postimg.cc/mDNdML8p/Rutura-films-logo.png" alt="Logo" class="logo-img">
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="page-main-column">
+                <div class="video-wrapper glass-effect">
+                    <iframe id="trailer-frame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="feature-header">
+                    <h2 id="page-title">Movie Title</h2>
+                    <span id="page-type" class="status-badge text-primary">Action</span>
+                </div>
+                <div class="meta-info glass-effect-panel">
+                    <span id="page-translator"><i class="fa-solid fa-user-gear"></i> Trans: N/A</span>
+                    <span id="page-date"><i class="fa-regular fa-clock"></i> Uploaded: ...</span>
+                </div>
+                
+                <div class="action-bar">
+                    <a id="watch-link" href="#" target="_blank" class="action-btn primary-btn compact-btn">
+                        <i class="fa-solid fa-play"></i> Watch Full Movie
+                    </a>
+                </div>
+                
+                <h3 class="section-label">Synopsis</h3>
+                <p id="page-desc" class="movie-description"></p>
+            </div>
+            <div class="page-side-column">
+                <h3 class="text-primary section-label">More Like This</h3>
+                <div id="related-movies-grid" class="movie-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="category-page" class="full-page-view">
+        <div class="page-nav glass-header">
+            <button class="back-btn" onclick="closeCategoryPage()">
+                <i class="fa-solid fa-arrow-left"></i> Back Home
+            </button>
+            <h2 id="cat-page-title" class="text-primary" style="margin-left: 20px; font-size: 1.5rem;">Category Name</h2>
+        </div>
+        <div class="page-content" style="display: block; padding-top: 100px;">
+            <div id="category-grid" class="movie-grid-large">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
